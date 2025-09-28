@@ -1,0 +1,59 @@
+<!-- Página de Login - LOGNET -->
+<div class="d-flex justify-content-center align-items-center vh-100"
+    style="background: linear-gradient(135deg, #0b0b0b, #ff6a00);">
+
+    <div class="card shadow p-4" style="width: 360px; border-radius: 12px;">
+
+        <!-- Logo -->
+        <div class="text-center mb-2">
+            <img src="https://lognetbr.com.br/wp-content/uploads/2023/06/BR-LOGNET-Icon-site-laranja.svg" alt="LOGNET"
+                style="height: 108px;">
+        </div>
+
+        <hr class="my-3" />
+
+        <!-- Alerta de erro -->
+        <div *ngIf="mensagemErro() != ''" class="alert alert-danger alert-dismissible fade show">
+            <strong>{{mensagemErro()}}</strong>
+            <button type="button" class="btn-close" aria-label="Close" (click)="mensagemErro.set('')"></button>
+        </div>
+
+        <!-- Formulário -->
+        <form [formGroup]="formAutenticacao" (ngSubmit)="autenticarUsuario()">
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email de acesso:</label>
+                <input type="email" formControlName="email" class="form-control" id="email"
+                    placeholder="Digite seu e-mail" required>
+                <div class="text-decoration-none" style="font-size: .9rem; color: #ff6a00; cursor: pointer;"
+                    *ngIf="formAutenticacao.get('email')?.touched && formAutenticacao.get('email')?.invalid">
+                    ***Email inválido***
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="senha" class="form-label">Senha de acesso:</label>
+                <input type="password" formControlName="senha" class="form-control" id="senha"
+                    placeholder="Digite sua senha" required>
+                <div class="text-decoration-none" style="font-size: .9rem; color: #ff6a00; cursor: pointer;"
+                    *ngIf="formAutenticacao.get('senha')?.touched && formAutenticacao.get('senha')?.invalid">
+                    ***Mín. 8 e Máx. 20 caracteres***
+                </div>
+            </div>
+
+            <!-- Botão principal com cor da marca -->
+            <button type="submit" class="btn w-100" [disabled]="formAutenticacao.invalid"
+                style="background-color:#ff6a00; border-color:#ff6a00; color:#111; font-weight:600;">
+                Acessar
+            </button>
+        </form>
+
+        <!-- Esqueci minha senha -->
+        <div class="text-end mb-3">
+            <a routerLink="/recuperar-senha" class="text-decoration-none" 
+                style="font-size: .9rem; color: black; cursor: pointer;">
+                Esqueceu a senha?
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+/* 🔹 Ajuste da Navbar */
+.custom-navbar {
+  background-color: #ff6a00 !important; 
+}
+
+.navbar-toggler {
+  padding: 0.15rem 0.35rem; /* reduz a área de clique */
+  font-size: 0.75rem;       /* diminui a fonte base do ícone */
+  
+}
+
+.navbar-toggler-icon {
+  width: 1rem;   /* largura do ícone */
+  height: 1rem;  /* altura do ícone */
+  
+}
+
+.navbar-brand {
+  font-size: 0.9rem; /* tamanho do texto menor */
+  padding-top: 0;    /* tira espaçamento extra em cima */
+  padding-bottom: 0; /* tira espaçamento extra embaixo */
+}
+ 
+
+/* deixa os links menores */
+.navbar-brand.small-link { 
+  font-size: 0.9rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* avatar compacto */
+.avatar {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  display: block;
+  
+}
+
+.offcanvas-custom {
+  background-color: #ff6a00 !important; /* fundo laranja */
+  color: white !important;              /* texto branco */
+}
