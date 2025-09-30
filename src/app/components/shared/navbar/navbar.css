@@ -9,11 +9,19 @@
   
 }
 
+/* Ícone mais forte (linhas mais grossas) */
 .navbar-toggler-icon {
-  width: 1rem;   /* largura do ícone */
-  height: 1rem;  /* altura do ícone */
-  
+  width: 1.3rem;   /* aumenta o tamanho */
+  height: 1.3rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  transition: background-image 0.3s ease;
 }
+
+/* Hover: linhas pretas */
+.navbar-toggler:hover .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 
 .navbar-brand {
   font-size: 0.9rem; /* tamanho do texto menor */
@@ -41,4 +49,49 @@
 .offcanvas-custom {
   background-color: #ff6a00 !important; /* fundo laranja */
   color: white !important;              /* texto branco */
+}
+
+/* Diminui a largura do menu lateral */
+.offcanvas-custom {
+  width: 250px; /* ajuste o valor conforme preferir */
+}
+
+/* Links: ficam pretos apenas no texto ao passar o mouse */
+.offcanvas-custom .nav-link {
+  color: #fff; /* cor padrão branca */
+  transition: color 0.3s;
+}
+
+.offcanvas-custom .nav-link:hover {
+  color: #000; /* texto preto no hover */
+  background-color: transparent; /* garante que não mude o fundo */
+}
+
+/* Botão fechar */
+.offcanvas-custom .btn-close {
+  filter: invert(1); /* mantém visível em fundo escuro */
+  transition: filter 0.3s;
+}
+
+.offcanvas-custom .btn-close:hover {
+  filter: invert(0); /* muda para preto no hover */
+}
+
+/* Links da navbar */
+.navbar .navbar-brand {
+  color: #fff; /* cor padrão branca */
+  transition: color 0.3s;
+}
+
+.navbar .navbar-brand:hover {
+  color: #000; /* texto preto no hover */
+}
+
+.offcanvas-logo {
+  max-width: 120px;  /* ajuste o tamanho conforme necessário */
+  height: auto;
+}
+
+.dropdown-item {
+  cursor: pointer; /* mostra a mãozinha */
 }

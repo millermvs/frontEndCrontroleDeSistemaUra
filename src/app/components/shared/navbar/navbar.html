@@ -8,7 +8,8 @@
               aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand ms-5 mb-0 small-link" routerLink="pages/consultar-cliente">Ligações</a>
+      <a class="navbar-brand ms-5 mb-0 small-link" routerLink="/pages/dashboard">Dashboard</a>
+      <a class="navbar-brand ms-5 mb-0 small-link" routerLink="/pages/ligacoes-ura">Ligações</a>
     </div>
 
     <!-- Direita: avatar com dropdown -->
@@ -19,29 +20,32 @@
       </a>
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="userMenu">
         <li><h6 class="dropdown-header">Olá, Usuário</h6></li>
-        <li><a class="dropdown-item" href="#">Meu perfil</a></li>
-        <li><a class="dropdown-item" href="#">Configurações</a></li>
+        <li><a class="dropdown-item">Meu perfil</a></li>
+        <li><a class="dropdown-item">Configurações</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sair</a></li>
+        <li><a class="dropdown-item" cursor=pointer (click)="logoffUsuario()">Sair</a></li>
       </ul>
     </div>
 
     <!-- Offcanvas (menu lateral) -->
     <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1"
-         id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">LogNet URA</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Ligações</a>
-          </li>          
-        </ul>
-        
-      </div>
-    </div>
+     id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+  <div class="offcanvas-header d-flex justify-content-center align-items-center w-100">
+    <!-- Logo centralizada -->
+    <img src="https://lognetbr.com.br/wp-content/uploads/2021/07/logo-lognet.png" 
+         alt="Logo LogNet" class="offcanvas-logo">
+    <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" routerLink="/pages/dashboard">Dashboard</a>
+        <a class="nav-link active" aria-current="page" routerLink="/pages/ligacoes-ura">Ligações</a>
+      </li>          
+    </ul>
+  </div>
+</div>
+
 
   </div>
 </nav>
