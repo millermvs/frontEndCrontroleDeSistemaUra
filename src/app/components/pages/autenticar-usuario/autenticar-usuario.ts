@@ -25,7 +25,7 @@ export class AutenticarUsuario {
   });
   
   autenticarUsuario(){
-    this.http.post(environment.apiAutenticarUsuarioAutenticar, this.formAutenticacao.value).subscribe({
+    this.http.post(environment.apiAutenticarUsuario, this.formAutenticacao.value).subscribe({
       next: (response: any) => {
         sessionStorage.setItem('auth', JSON.stringify(response));
         this.router.navigate(['/pages/dashboard'])
