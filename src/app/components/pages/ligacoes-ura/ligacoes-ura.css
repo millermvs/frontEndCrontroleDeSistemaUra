@@ -1,0 +1,12 @@
+.btn-buscar {
+  background-color: #ff6a00;
+  border-color: #ff6a00;
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+/* ao passar o mouse */
+.btn-buscar:hover {
+  color: #000000; /* apenas o texto fica preto */
+}
